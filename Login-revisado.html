@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo_login.css">
+    <link rel="stylesheet" href="particulas.css">
+    <link rel="shortcut icon" href="Assets/Academia_Icone.ico" type="image/x-icon">
+    <title>Login</title>
+</head>
+<body>
+    <div id="particles-js" aria-hidden="true"></div>
+    <header>
+        <img src="Assets/Logo.png" alt="Academia - Espaço Livre">
+    </header>
+    <main>
+        <form action="Login.php" method="POST">
+            <h1>LOGIN</h1>
+
+            <label for="login">
+                Email/Tel:
+                <input type="text" id="login" name="login" required autocomplete="username" inputmode="email">
+            </label>
+            
+            <label for="senha">
+                Senha:
+                <input type="password" id="senha" name="senha" required autocomplete="current-password">
+            </label>
+            
+            <input type="submit" value="Entrar">
+        </form>
+    </main>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="particulas.js"></script>
+</body>
+</html>
