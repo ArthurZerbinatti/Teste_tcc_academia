@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="estilo/base.css">
+    <link rel="stylesheet" href="estilo/logo.css">
+    <link rel="stylesheet" href="estilo/form_cad-log.css">
+    <link rel="stylesheet" href="estilo/particulas.css">
+    <link rel="shortcut icon" href="Assets/Academia_Icone.ico" type="image/x-icon">
+
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <div id="particles-js" aria-hidden="true"></div>
+    <header>
+        <img src="Assets/Logo.png" alt="Logo da Academia Espaço Livre" id="logo">
+    </header>
+    <main>
+        <form action="Cadastro.php" method="post">
+
+            <label>
+                Nome:
+                <input type="text" id="nome" name="nome" required autocomplete="name">
+            </label>
+
+            <label>
+                CPF:
+                <input 
+                type="text" 
+                id="cpf" 
+                name="cpf" 
+                required 
+                inputmode="numeric" 
+                maxlength="11">
+            </label>
+
+            <label>
+                Telefone:
+                <input 
+                type="tel" 
+                id="telefone" 
+                name="telefone" 
+                required 
+                autocomplete="tel">
+            </label>
+
+            <label>
+                Email:
+                <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                required 
+                autocomplete="email">
+            </label>
+
+            <label>
+                Senha:
+                <input 
+                type="password" 
+                id="senha" 
+                name="senha" 
+                required 
+                autocomplete="new-password" 
+                minlength="8">
+            </label>
+
+            <label>
+                Confirme a Senha:
+                <input 
+                type="password" 
+                id="senha_conf" 
+                name="senha_conf" 
+                required 
+                autocomplete="new-password" 
+                minlength="8">
+            </label>
+
+            <fieldset aria-required="true">
+                <legend>Sexo:</legend>
+                <label>
+                    <input 
+                    type="radio" 
+                    name="sexo" 
+                    value="Masculino" 
+                    required>
+                    Homem
+                </label>
+
+                <label>
+                    <input 
+                    type="radio" 
+                    name="sexo" 
+                    value="Feminino">
+                    Mulher
+                </label>
+            </fieldset>
+
+            <label>
+                Data de Nascimento:
+                <input 
+                type="date" 
+                id="data_nascimento" 
+                name="data_nascimento" 
+                required>
+            </label>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="particulas.js"></script>
+
+</body>
+</html>
