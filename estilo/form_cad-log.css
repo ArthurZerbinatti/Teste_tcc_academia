@@ -20,7 +20,7 @@ label{
     width: 100%;
 }
 
-input[type="text"], input[type="password"]{
+input[type="text"], input[type="password"], input[type="tel"], input[type="email"]{
     width: 100%;
     border-radius: 20px;
     border: #919191 1px solid;
