@@ -1,0 +1,23 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100dvh;
+    background-color: #960018;
+
+    font-family: 'Segoe UI', Tahoma;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+main{
+    display: flex;
+    height: auto;
+    justify-content: center;
+    margin: 50px;
+    margin-top: clamp(0px, 5vh, 50px);
+
+}
