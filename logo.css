@@ -1,0 +1,5 @@
+#logo{
+    border-radius: 50%;
+    width: clamp(100px, 30vw, 150px);
+    outline: solid;
+}
