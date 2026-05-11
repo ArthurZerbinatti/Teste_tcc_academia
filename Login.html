@@ -3,36 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo/base.css">
-    <link rel="stylesheet" href="estilo/logo.css">
-    <link rel="stylesheet" href="estilo/form_cad-log.css">
-    <link rel="stylesheet" href="estilo/particulas.css">
-    <link rel="shortcut icon" href="Assets/Academia_Icone.ico" type="image/x-icon">
-    <title>Login</title>
+
+    <title>Login | Lavire Academia</title>
+
+    <link rel="stylesheet" href="Login.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 </head>
 <body>
-    <div id="particles-js" aria-hidden="true"></div>
-    <header>
-        <img src="Assets/Logo.png" alt="Logo da Academia Espaço Livre" id="logo">
-    </header>
-    <main>
-        <form action="Login.php" method="POST">
-            <h1>LOGIN</h1>
 
-            <label>
-                Email/Tel:
-                <input type="text" name="login" required autocomplete="username" inputmode="email">
-            </label>
-            
-            <label>
-                Senha:
-                <input type="password" name="senha" required autocomplete="current-password">
-            </label>
-            
-            <input type="submit" value="Entrar">
-        </form>
+    <main class="login-layout">
+
+        <!-- IMAGEM / HERO -->
+        <section class="hero" aria-label="Apresentação da academia">
+
+            <figure class="hero-image">
+                <img 
+                src="Assets/hero-login.png" 
+                alt="Homem treinando na academia com iluminação vermelha">
+            </figure>
+
+        </section>
+
+        <!-- LOGIN -->
+        <section class="login-section" aria-labelledby="titulo-login">
+
+            <header class="login-header">
+
+                <img 
+                src="Assets/Logo.png" 
+                alt="Logo da Lavire Academia"
+                class="logo">
+
+                <div class="hero-copy">
+
+                    <h1 id="titulo-login">
+                        BEM-VINDO
+                        <span class="destaque">DE VOLTA!</span>
+                    </h1>
+
+                    <p>
+                        Acesse sua conta e continue
+                        sua evolução.
+                    </p>
+
+                </div>
+
+            </header>
+
+            <!-- CARD -->
+            <article class="login-card">
+
+                <header class="card-header">
+
+                    <h2>
+                        FAÇA SEU
+                        <span class="destaque">LOGIN</span>
+                    </h2>
+
+                    <p>
+                        Entre com suas informações
+                        para acessar sua conta.
+                    </p>
+
+                </header>
+
+                <!-- FORM -->
+                <form action="Login.php" method="POST">
+
+                    <!-- CPF -->
+                    <label for="cpf">
+
+                        CPF
+
+                        <div class="input-wrapper">
+
+                            <i aria-hidden="true">
+                                <img 
+                                src="Assets/user-icon.png" 
+                                alt="">
+                            </i>
+
+                            <input 
+                            type="text"
+                            id="cpf"
+                            name="cpf"
+                            placeholder="000.000.000-00"
+                            inputmode="numeric"
+                            autocomplete="username"
+                            required>
+
+                        </div>
+
+                    </label>
+
+                    <!-- SENHA -->
+                    <label for="senha">
+
+                        SENHA
+
+                        <div class="input-wrapper">
+
+                            <i aria-hidden="true">
+                                <img 
+                                src="Assets/lock-icon.png" 
+                                alt="">
+                            </i>
+
+                            <input 
+                            type="password"
+                            id="senha"
+                            name="senha"
+                            placeholder="Digite sua senha"
+                            autocomplete="current-password"
+                            required>
+
+                            <button 
+                            type="button"
+                            class="mostrar-senha"
+                            aria-label="Mostrar senha">
+
+                                <img 
+                                src="Assets/eye-icon.png" 
+                                alt="">
+
+                            </button>
+
+                        </div>
+
+                    </label>
+
+                    <!-- ESQUECI -->
+                    <a href="#" class="forgot-password">
+                        Esqueci minha senha
+                    </a>
+
+                    <!-- BOTÃO -->
+                    <button type="submit" class="btn-login">
+
+                        ENTRAR
+
+                        <i aria-hidden="true">
+                            <img 
+                            src="Assets/arrow-right.png" 
+                            alt="">
+                        </i>
+
+                    </button>
+
+                </form>
+
+                <!-- DIVISOR -->
+                <div class="separator" aria-hidden="true">
+
+                    <span></span>
+                    <p>ou</p>
+                    <span></span>
+
+                </div>
+
+                <!-- CADASTRO -->
+                <footer class="register-link">
+
+                    <p>
+                        Ainda não tem uma conta?
+                    </p>
+
+                    <a href="Cadastro.html">
+                        CADASTRE-SE
+                    </a>
+
+                </footer>
+
+            </article>
+
+        </section>
+
     </main>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="particulas.js"></script>
+
 </body>
 </html>
