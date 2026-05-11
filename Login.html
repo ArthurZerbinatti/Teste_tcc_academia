@@ -184,5 +184,53 @@
 
     </main>
 
+    <script>
+/* =========================
+   MOSTRAR / ESCONDER SENHA
+========================= */
+
+const botaoMostrarSenha = document.querySelector('.mostrar-senha');
+
+const inputSenha = document.querySelector('#senha');
+
+const iconeOlho = botaoMostrarSenha.querySelector('img');
+
+botaoMostrarSenha.addEventListener('click', () => {
+
+    const senhaVisivel = inputSenha.type === 'text';
+
+    if(senhaVisivel){
+
+        /* ESCONDE A SENHA */
+
+        inputSenha.type = 'password';
+
+        iconeOlho.src = 'Assets/eye-icon.svg';
+
+        iconeOlho.alt = 'Mostrar senha';
+
+        botaoMostrarSenha.setAttribute(
+            'aria-label',
+            'Mostrar senha'
+        );
+
+    } else {
+
+        /* MOSTRA A SENHA */
+
+        inputSenha.type = 'text';
+
+        iconeOlho.src = 'Assets/closed-eye-icon.svg';
+
+        iconeOlho.alt = 'Esconder senha';
+
+        botaoMostrarSenha.setAttribute(
+            'aria-label',
+            'Esconder senha'
+        );
+    }
+});
+    </script>
+
 </body>
 </html>
