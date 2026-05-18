@@ -1,0 +1,53 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+
+    --cor-principal: #d60000;
+    --cor-principal-hover: #ff1a1a;
+
+    --bg-principal: rgb(5, 5, 5);
+    --bg-card: rgba(12, 12, 12, 0.92);
+
+    --texto-principal: #ffffff;
+    --texto-secundario: #bdbdbd;
+
+    --borda: rgba(255,255,255,0.08);
+
+    --radius-grande: 24px;
+    --radius-media: 14px;
+    --radius-pequena: 8px;
+
+    --sombra: 0 0 30px rgba(0,0,0,0.5);
+
+    --transicao: 0.3s ease;
+
+    --fonte: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: var(--fonte);
+    background-color: var(--bg-principal);
+    color: var(--texto-principal);
+    overflow-x: hidden;
+}
+
+.layout {
+    min-height: 100vh;
+    display: flex;
+    position: relative;
+}
+
+.logo {
+    border-radius: 50%;
+    width: clamp(150px, 15vw, 200px);
+    margin-bottom: 40px;
+}

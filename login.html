@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Login | Academia Espaço Livre </title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* FOTO PRINCIPAL */
+
+        .hero {
+            width: 55%;
+            position: fixed;
+            right: 0;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background: 
+            linear-gradient(
+                to right,
+                rgba(5, 5, 5, 1),
+                rgba(5, 5, 5, 0.5),
+                rgba(5, 5, 5, 0)
+            );
+        }
+
+
+        /* TÍTULO */
+
+        .titulo {
+            width: 45%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            min-height: 100vh;
+            z-index: 10;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: clamp(20px, 5vw, 80px);
+        }
+
+        .titulo-header {
+            margin-bottom: 40px;
+        }
+
+        .titulo-text h1 {
+            font-size: clamp(2rem, 3vw, 3.2rem);
+            line-height: 1.1;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .titulo-text p {
+            color: var(--texto-secundario);
+            font-size: 1.1rem;
+            line-height: 1.5;
+            max-width: 350px;
+        }
+
+
+        /* CARD */
+
+        .card {
+            width: min(100%, 520px);
+            background: var(--bg-card);
+            border: 1px solid var(--borda);
+            border-radius: var(--radius-grande);
+            backdrop-filter: blur(12px);
+            padding: clamp(10px, 3vw, 20px);
+            box-shadow: var(--sombra);
+        }
+
+        .card-header {
+            margin-bottom: 32px;
+        }
+
+        .card-header h2 {
+            font-size: clamp(1.8rem, 2vw, 2.4rem);
+            margin-bottom: 12px;
+        }
+
+        .card-header p {
+            color: var(--texto-secundario);
+            line-height: 1.5;
+        }
+
+
+        /* FORM */
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        label {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .campo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: var(--radius-media);
+            padding: 0 18px;
+            transition: var(--transicao);
+        }
+
+        .campo:focus-within {
+            border-color: var(--cor-principal);
+            box-shadow: 0 0 10px rgba(214,0,0,0.3);
+        }
+
+        input {
+            width: 100%;
+            height: 40px;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: var(--texto-principal);
+            font-size: 1rem;
+        }
+
+        input::placeholder {
+            color: var(--texto-secundario);
+        }
+
+        .campo img {
+            width: 22px;
+            height: 22px;
+            opacity: 0.7;
+        }
+
+        .mostrar-senha {
+            background: none;
+            border: none;
+            cursor: pointer;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .esqueci-senha {
+            width: fit-content;
+            margin-left: auto;
+            text-decoration: none;
+            color: var(--cor-principal);
+            font-size: 0.9rem;
+            transition: var(--transicao);
+        }
+
+        .esqueci-senha:hover {
+            color: var(--cor-principal-hover);
+        }
+
+        .btn-login {
+            height: 64px;
+            border: none;
+            border-radius: var(--radius-media);
+            background: var(--cor-principal);
+            color: white;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            transition: var(--transicao);
+        }
+
+        .btn-login:hover {
+            background: var(--cor-principal-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-login img {
+            width: 20px;
+            height: 20px;
+        }
+
+
+        /* DIVISOR */
+
+        .separator {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin: 32px 0;
+        }
+
+        .separator span {
+            flex: 1;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .separator p {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+
+        /* LINK PRO CADASTRO */
+
+        .cadastro {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-media);
+            padding: 15px;
+            text-align: center;
+        }
+
+        .cadastro p {
+            margin-bottom: 10px;
+            color: var(--texto-secundario);
+        }
+
+        .cadastro a {
+            text-decoration: none;
+            color: var(--cor-principal);
+            font-weight: 700;
+            transition: var(--transicao);
+        }
+
+        .cadastro a:hover {
+            color: var(--cor-principal-hover);
+        }
+
+
+        /* RESPONSIVO */
+
+        @media (max-width: 1100px) {
+            .hero {
+                width: 100%;
+            }
+
+            .titulo {
+                width: 100%;
+                background:
+                linear-gradient(
+                    to bottom,
+                    rgba(0,0,0,0.75),
+                    rgba(0,0,0,0.92)
+                );
+            }
+        }
+
+        @media (max-width: 768px) {
+            .layout {
+                display: block;
+            }
+
+            .hero {
+                position: fixed;
+                inset: 0;
+                width: 100%;
+                z-index: -1;
+            }
+
+            .hero img {
+                height: 100%;
+            }
+
+            .titulo {
+                position: relative;
+                min-height: 100vh;
+                align-items: center;
+                justify-content: center;
+                padding: 24px;
+            }
+
+            .titulo-header {
+                text-align: center;
+            }
+
+            .titulo-text p {
+                margin-inline: auto;
+            }
+
+            .card {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .titulo-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .titulo-text h2 {
+                font-size: 1.5rem;
+            }
+
+            .btn-login {
+                height: 58px;
+            }
+
+            input {
+                height: 54px;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <main class="layout">
+
+        <section class="hero">
+
+            <figure class="hero-image">
+                <img src="arthur/fachada.png">
+            </figure>
+
+        </section>
+
+
+        <section class="titulo">
+
+            <header class="titulo-header">
+
+                <img class="logo" src="arthur/Assets/Logo.png">
+
+                <div class="titulo-text">
+                    <h1> BEM VINDO(A) À ACADEMIA ESPAÇO LIVRE! </h1>
+
+                    <p> Acesse sua conta e continue sua evolução </p>
+                </div>
+
+            </header>
+
+            <article class="card">
+
+                <header class="card-header">
+                    <h2> FAÇA SEU LOGIN </h2>
+
+                    <p> Entre com suas informações para acessar sua conta </p>
+                </header>
+
+                <form action="Login.php" method="POST">
+
+                    <label for="cpf">
+
+                        CPF
+
+                        <div class="campo">
+                            <i aria-hidden="true">
+                                <img src="arthur/Assets/user-icon.svg">
+                            </i>
+
+                            <input
+                            type="text"
+                            id="cpf"
+                            name="cpf"
+                            placeholder="000.000.000-00"
+                            inputmode="numeric"
+                            autocomplete="username"
+                            required>
+                        </div>
+
+                    </label>
+
+                    <label for="senha">
+
+                        SENHA
+
+                        <div class="campo">
+
+                            <i aria-hidden="true">
+                                <img src="arthur/Assets/lock-icon.svg">
+                            </i>
+
+                            <input
+                            type="password"
+                            id="senha"
+                            name="senha"
+                            placeholder="Digite sua senha"
+                            autocomplete="current-password"
+                            required>
+
+                            <button
+                            type="button"
+                            class="mostrar-senha"
+                            aria-label="Mostrar senha">
+                                <img src="arthur/Assets/eye-icon.svg">
+                            </button>
+
+                        </div>
+
+                    </label>
+
+                    <a href="#" class="esqueci-senha"> Esqueci minha senha </a>
+
+                    <button type="submit" class="btn-login">
+                        ENTRAR
+
+                        <i aria-hidden="true"">
+                            <img src="arthur/Assets/arrow-right-icon.svg">
+                        </i>
+                    </button>
+
+                </form>
+
+                <div class="separator" aria-hidden="true">
+                    <span></span>
+                    <p> OU </p>
+                    <span></span>
+                </div>
+
+                <footer class="cadastro">
+                    <p> Ainda não tem uma conta? </p>
+
+                    <a href="cadastro.html"> CADASTRE-SE </a>
+                </footer>
+
+            </article>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
